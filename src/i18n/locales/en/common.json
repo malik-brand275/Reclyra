@@ -1,0 +1,27 @@
+{
+	"app": {
+		"name": "Reclyra",
+		"editorTitle": "Reclyra Edit",
+		"recorderTitle": "Reclyra Recorder",
+		"subtitle": "Record. Let it edit itself.",
+		"language": "Language",
+		"manageRecordings": "Open recordings folder"
+	},
+	"actions": {
+		"cancel": "Cancel",
+		"close": "Close",
+		"export": "Export",
+		"load": "Load",
+		"redo": "Redo",
+		"reset": "Reset",
+		"save": "Save",
+		"undo": "Undo",
+		"delete": "Delete",
+		"done": "Done"
+	},
+	"errors": {
+		"invalidFileType": "Invalid file type",
+		"failedToUploadImage": "Failed to upload image",
+		"fileReadError": "There was an error reading the file."
+	}
+}
