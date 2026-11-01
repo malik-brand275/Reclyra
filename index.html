@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/app-icons/recordly-32.png" />
+    <link rel="icon" type="image/png" href="/app-icons/reclyra-32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recordly</title>
+    <title>Reclyra</title>
     <script>
       // Paint the destination shell before the renderer bundle is downloaded or evaluated.
       // Keep recording overlays transparent during their own startup.
@@ -14,13 +14,13 @@
         let startupView = new URLSearchParams(location.search).get("startupView");
         try { startupView = window.electronAPI?.getEditorStartupView?.() || startupView; }
         catch { /* Fall back to the explicit destination if the bridge is unavailable. */ }
-        try { if (localStorage.getItem("recordly.open-dashboard")) startupView = "home"; }
+        try { if (localStorage.getItem("reclyra.open-dashboard")) startupView = "home"; }
         catch { /* Home metadata can still be resolved through the desktop bridge. */ }
         document.documentElement.dataset.startupView = startupView === "home" ? "home" : "editor";
         let preference = "system";
         try {
-          preference = window.electronAPI?.getAppSetting("recordly.theme") ||
-            localStorage.getItem("recordly.theme") || "system";
+          preference = window.electronAPI?.getAppSetting("reclyra.theme") ||
+            localStorage.getItem("reclyra.theme") || "system";
         } catch { /* Use the system theme when persisted settings are unavailable. */ }
         document.documentElement.dataset.theme =
           preference === "dark" ||

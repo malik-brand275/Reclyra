@@ -1,8 +1,5 @@
-Language: EN | [简中](README.zh-CN.md)
-
-<p align="center">
-  <img width="220" alt="Recordly Logo" src="https://github.com/user-attachments/assets/414b8838-6731-45d4-a815-6e3c0aa1fe52" />
-</p>
+<h1 align="center">Reclyra</h1>
+<p align="center"><b>Record. Let it edit itself.</b></p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/macOS%20%7C%20Windows%20%7C%20Linux-111827?style=for-the-badge" alt="macOS Windows Linux" />
@@ -10,23 +7,22 @@ Language: EN | [简中](README.zh-CN.md)
 </p>
 
 ### Create polished demo videos in minutes
-[Recordly](https://www.recordly.dev) is your **open-source screen recorder** and editor for **walkthroughs, demos, product videos**, and more. 
-**Accepting PRs.**
+Reclyra is a free, **open-source screen recorder** for **walkthroughs, demos, product videos**, and more. No account, no sign-in, no cloud: everything stays on your computer.
+
+- **Reclyra Recorder**: capture your screen, window, webcam and audio.
+- **Reclyra Edit**: automatic editing with auto-zoom, cursor effects, backgrounds, annotations and more.
+
 
 <img width="1280" height="720" alt="MP4 to GIF export (4)" src="https://github.com/user-attachments/assets/e6d68606-5fc0-4f70-99cd-7521982dc13b" />
 
 
 ---
-### Backed by the community
-<a href="https://coderabbit.link/recordly"><img width="400" alt="CodeRabbit Typemark" src="https://github.com/user-attachments/assets/3926ecfd-8652-4f2d-8da8-ac7641017cf5" /></a>
 
----
+## What is Reclyra?
 
-## What is Recordly?
+Reclyra is a desktop app for recording and editing screen captures with motion-driven presentation tools built in. Instead of sending raw footage to a motion designer just to add zooms, cursor polish, or a styled background, Reclyra handles that workflow in one place for free.
 
-Recordly is a desktop app for recording and editing screen captures with motion-driven presentation tools built in. Instead of sending raw footage to a motion designer just to add zooms, cursor polish, or a styled background, Recordly handles that workflow in one place for free.
-
-Recordly runs on:
+Reclyra runs on:
 
 - **macOS** 14.0+
 - **Windows** 10 Build 19041+
@@ -43,33 +39,25 @@ Platform notes:
 # Core Features
 
 ## Auto-zooms, cursor polish, and styled frames
-Recordly can automatically emphasize activity with zoom suggestions, smooth cursor movement, add motion effects, and place the final composition inside a styled frame with wallpapers, colors, gradients, blur, padding, and shadows.
+Reclyra can automatically emphasize activity with zoom suggestions, smooth cursor movement, add motion effects, and place the final composition inside a styled frame with wallpapers, colors, gradients, blur, padding, and shadows.
 
 <p>
-  <img src="./docs/media/feature1.gif" width="450" alt="Recordly cursor and zoom demo video">
+  <img src="./docs/media/feature1.gif" width="450" alt="Reclyra cursor and zoom demo video">
 </p>
 
 ## Dynamic webcam bubble overlays
 Add webcam footage as an overlay bubble, position it with presets or custom coordinates, mirror it, control shadow and roundness, and optionally make it react to zoom so it stays visually balanced during motion.
 
 <p>
-  <img src="./docs/media/feature2.gif" width="450" alt="Recordly webcam overlay demo video">
+  <img src="./docs/media/feature2.gif" width="450" alt="Reclyra webcam overlay demo video">
 </p>
 
 ## Timeline editing built for demos
-Use drag-and-drop timeline tools for zooms, trims, speed regions, annotations, extra audio regions, and crop-aware edits. Save and reopen work as `.recordly` project files.
+Use drag-and-drop timeline tools for zooms, trims, speed regions, annotations, extra audio regions, and crop-aware edits. Save and reopen work as `.reclyra` project files.
 
 <p>
   <img width="450" alt="timeline editor" src="https://github.com/user-attachments/assets/3692bd8f-7b8d-4a93-b696-d17c828487ea" />
 </p>
-
-## Extensions & Marketplace
-
-Recordly has a community-driven extension system. Anyone can build and publish extensions that add new capabilities to Recordly — cursor click sounds, device frames, browser mockups, wallpapers, render hooks, settings panels, and more.
-
-Browse and install community extensions from the [Recordly Marketplace](https://marketplace.recordly.dev/extensions).
-
----
 
 ## All Features
 
@@ -79,7 +67,7 @@ Browse and install community extensions from the [Recordly Marketplace](https://
 - Jump directly from recording into the editor
 - Capture microphone audio and system audio
 - Use native capture backends where supported
-- Resume editing from saved `.recordly` project files
+- Resume editing from saved `.reclyra` project files
 - Open existing recordings or existing project files from the app
 
 ### Timeline and Editing
@@ -145,7 +133,6 @@ Browse and install community extensions from the [Recordly Marketplace](https://
 
 - Customizable keyboard shortcuts
 - In-app shortcut reference
-- Feedback and issue links from the editor
 - Project persistence for editor preferences
 - Faster preview recovery after export
 ---
@@ -153,15 +140,15 @@ Browse and install community extensions from the [Recordly Marketplace](https://
 # Screenshots
 
 <p align="center">
-  <img src="https://i.postimg.cc/8CrQtGJf/Screenshot-2026-04-30-at-5-11-52-pm.png" width="700" alt="Recordly recording interface screenshot">
+  <img src="https://i.postimg.cc/8CrQtGJf/Screenshot-2026-04-30-at-5-11-52-pm.png" width="700" alt="Reclyra recording interface screenshot">
 </p>
 
 <p align="center">
-  <img src="https://i.postimg.cc/pLSMfrTM/Screenshot-2026-04-30-at-5-11-45-pm.png" width="700" alt="Recordly editor screenshot">
+  <img src="https://i.postimg.cc/pLSMfrTM/Screenshot-2026-04-30-at-5-11-45-pm.png" width="700" alt="Reclyra editor screenshot">
 </p>
 
 <p align="center">
-  <img src="https://i.postimg.cc/Zn9VY6bg/Screenshot-2026-03-18-at-6-32-59-pm.png" width="700" alt="Recordly timeline screenshot">
+  <img src="https://i.postimg.cc/Zn9VY6bg/Screenshot-2026-03-18-at-6-32-59-pm.png" width="700" alt="Reclyra timeline screenshot">
 </p>
 
 ---
@@ -172,19 +159,19 @@ Browse and install community extensions from the [Recordly Marketplace](https://
 
 Prebuilt releases are available at:
 
-https://github.com/webadderallorg/Recordly/releases
+https://github.com/malik-brand275/Reclyra/releases
 
 ---
 
 ## Arch Linux / Manjaro (yay)
 
-Install from the AUR ([recordly-bin](https://aur.archlinux.org/packages/recordly-bin)):
+Install from the AUR ([reclyra-bin](https://aur.archlinux.org/packages/reclyra-bin)):
 
 ```bash
-yay -S recordly-bin
+yay -S reclyra-bin
 ```
 
-PKGBUILD, desktop entry, release sync, and optional **local-from-source** packaging live in **[recordly-aur](https://github.com/firtoz/recordly-aur)** so this repository stays free of Arch release chores. For maintainer contact and how the package is updated, see that repo or the AUR package page.
+PKGBUILD, desktop entry, release sync, and optional **local-from-source** packaging live in **[reclyra-aur](https://github.com/firtoz/reclyra-aur)** so this repository stays free of Arch release chores. For maintainer contact and how the package is updated, see that repo or the AUR package page.
 
 ---
 
@@ -205,8 +192,8 @@ sudo apt install build-essential cmake libx11-dev libxtst-dev libxrandr-dev libx
 ### Steps
 
 ```bash
-git clone https://github.com/webadderallorg/Recordly.git recordly
-cd recordly
+git clone https://github.com/malik-brand275/Reclyra.git reclyra
+cd reclyra
 npm install
 npm run dev
 ```
@@ -232,7 +219,7 @@ Locally built apps may be quarantined by macOS.
 Remove the quarantine flag with:
 
 ```bash
-xattr -rd com.apple.quarantine /Applications/Recordly.app
+xattr -rd com.apple.quarantine /Applications/Reclyra.app
 ```
 
 ---
@@ -254,7 +241,7 @@ xattr -rd com.apple.quarantine /Applications/Recordly.app
 
 ## Record
 
-1. Launch Recordly.
+1. Launch Reclyra.
 2. Select a screen or window.
 3. Choose microphone and system-audio options.
 4. Start recording.
@@ -271,7 +258,7 @@ Inside the editor you can:
 - add extra audio regions
 - crop the frame and choose an aspect ratio
 
-Save your work anytime as a `.recordly` project.
+Save your work anytime as a `.reclyra` project.
 
 ## Export
 
@@ -288,7 +275,7 @@ You can adjust format-specific settings such as quality, GIF frame rate, GIF loo
 
 ### Cursor capture
 
-Recordly renders a polished cursor overlay on top of the recording. Platform cursor-hiding behavior still depends on OS support.
+Reclyra renders a polished cursor overlay on top of the recording. Platform cursor-hiding behavior still depends on OS support.
 
 **macOS**
 - ScreenCaptureKit can exclude the real cursor cleanly.
@@ -318,7 +305,7 @@ System audio support varies by platform.
 
 # How It Works
 
-Recordly combines a platform-specific capture layer with a renderer-driven editor and export pipeline.
+Reclyra combines a platform-specific capture layer with a renderer-driven editor and export pipeline.
 
 **Capture**
 - Electron coordinates recording and application flow
@@ -336,7 +323,7 @@ Recordly combines a platform-specific capture layer with a renderer-driven edito
 - The same scene logic used in preview is rendered into exported MP4 or GIF output
 
 **Projects**
-- `.recordly` files store the source media path plus editor state so work can be reopened later
+- `.reclyra` files store the source media path plus editor state so work can be reopened later
 
 ---
 
@@ -362,48 +349,20 @@ See `CONTRIBUTING.md` for guidelines.
 
 Bug reports and feature requests:
 
-https://github.com/webadderallorg/Recordly/issues
+https://github.com/malik-brand275/Reclyra/issues
 
 Pull requests are welcome.
 
 ---
 
-# Hall of Supporters
-
-[![Ko-Fi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/webadderall)
-
-- Tom Egan @tomegan on X
-- Robin Ebers @robinebers on X
-- Tadees
-- buildwithfur
-- piccinato
-- Tobias
-- Anonymous Supporter
-- Tandava Appadoo
-- Digitalfastmind
-- Roberto Marcelino
-- Tony
-- Rajan RK
-- Francesco
-- Erwan
-- Anonymous supporter
-
----
-
 # License
 
-Recordly is licensed under the **AGPL 3.0**.
+Reclyra is licensed under the **AGPL 3.0**.
 
 ---
 
 # Credits
 
-## Acknowledgements
+Reclyra is created and maintained by **GulfamHaider** ([malik-brand275/Reclyra](https://github.com/malik-brand275/Reclyra)).
 
-Recordly originally started as a fork of [OpenScreen](https://github.com/siddharthvaddem/openscreen). Over 80% of code has diverged since.
-Many features of OpenScreen such as its zoom animations are directly ported from early versions of Recordly.
-
-Created by  
-[@webadderall](https://x.com/webadderall)
-
----
+Reclyra is a modified version of [Recordly](https://github.com/webadderall/Recordly) by **webadderall**, licensed under AGPL-3.0 (Copyright (C) 2026 webadderall). Recordly itself started as a fork of [OpenScreen](https://github.com/siddharthvaddem/openscreen) by Siddharth Vaddem. See `LICENSE.md` and `THIRD_PARTY_NOTICES.md`.

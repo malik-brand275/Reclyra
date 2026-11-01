@@ -1,15 +1,15 @@
 {
-	"name": "recordly",
-	"productName": "Recordly",
-	"description": "A free, creator-focused screen recorder with auto-zoom, cursor effects, backgrounds, annotations, and more - built for polished videos out of the box.",
-	"author": "webadderall",
-	"homepage": "https://github.com/webadderallorg/Recordly",
+	"name": "reclyra",
+	"productName": "Reclyra",
+	"description": "Reclyra - Record. Let it edit itself. A free, open source screen recorder (Reclyra Recorder) with automatic editing (Reclyra Edit): auto-zoom, cursor effects, backgrounds, annotations and more.",
+	"author": "GulfamHaider",
+	"homepage": "https://github.com/malik-brand275/Reclyra",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/webadderallorg/Recordly.git"
+		"url": "https://github.com/malik-brand275/Reclyra.git"
 	},
 	"bugs": {
-		"url": "https://github.com/webadderallorg/Recordly/issues"
+		"url": "https://github.com/malik-brand275/Reclyra/issues"
 	},
 	"private": true,
 	"version": "1.4.0",
@@ -51,7 +51,6 @@
 	"dependencies": {
 		"@phosphor-icons/react": "^2.1.10",
 		"@solar-icons/react": "^2.3.0",
-		"@supabase/supabase-js": "^2.116.0",
 		"capturekit": "^1.0.13",
 		"electron-updater": "^6.8.3",
 		"ffmpeg-static": "^5.3.0",

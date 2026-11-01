@@ -9,8 +9,8 @@ export default defineConfig({
 	},
 	webServer: {
 		env: {
-			RECORDLY_RENDERER_ONLY: "1",
-			VITE_SUPABASE_URL: "https://auth.recordly.test",
+			RECLYRA_RENDERER_ONLY: "1",
+			VITE_SUPABASE_URL: "https://auth.reclyra.test",
 			VITE_SUPABASE_PUBLISHABLE_KEY: "sb_publishable_ui_test",
 		},
 		command: "npx vite --host 127.0.0.1 --port 5178 --strictPort",

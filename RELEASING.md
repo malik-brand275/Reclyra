@@ -1,4 +1,4 @@
-# Releasing Recordly
+# Releasing Reclyra
 
 This repository now uses `electron-builder` + `electron-updater` for macOS, Windows, and Linux auto-updates.
 
@@ -15,7 +15,6 @@ When you publish a GitHub release tagged like `v1.2.3`, `.github/workflows/relea
 - build and sign the Windows NSIS installer
 - build the Linux AppImage
 - publish installer artifacts and auto-update metadata files to the GitHub release
-- dispatch the Homebrew tap workflow after the release assets are available
 
 The packaged app then checks GitHub Releases for:
 
@@ -42,8 +41,8 @@ If the certificate you currently have is only `Apple Development`, that is not e
 To export and encode the certificate:
 
 ```bash
-security export -k ~/Library/Keychains/login.keychain-db -t identities -f pkcs12 -P "YOUR_P12_PASSWORD" -o recordly-mac-signing.p12
-base64 < recordly-mac-signing.p12 | pbcopy
+security export -k ~/Library/Keychains/login.keychain-db -t identities -f pkcs12 -P "YOUR_P12_PASSWORD" -o reclyra-mac-signing.p12
+base64 < reclyra-mac-signing.p12 | pbcopy
 ```
 
 Paste the copied base64 into `APPLE_SIGNING_CERTIFICATE_P12_BASE64` and the export password into `APPLE_SIGNING_CERTIFICATE_PASSWORD`.
@@ -56,17 +55,6 @@ Set these repository secrets:
 - `WINDOWS_SIGNING_CERTIFICATE_PASSWORD`
 
 These should point to an Authenticode code-signing certificate exported as `.p12` and then base64-encoded.
-
-### Homebrew tap automation
-
-Set this repository secret if you want the cask PR to open automatically:
-
-- `HOMEBREW_TAP_TOKEN`
-
-Optional repository variables:
-
-- `HOMEBREW_TAP_REPO`
-- `HOMEBREW_TAP_AUTO_MERGE`
 
 ## Release flow
 
