@@ -49,7 +49,7 @@ test("home dashboard searches, sorts, opens projects and returns to the editor",
 	await page.addInitScript(() => {
 		let entries = [
 			{
-				path: "/projects/launch.recordly",
+				path: "/projects/launch.reclyra",
 				name: "Launch video",
 				updatedAt: 1758000000000,
 				thumbnailPath: null,
@@ -57,7 +57,7 @@ test("home dashboard searches, sorts, opens projects and returns to the editor",
 				isInProjectsDirectory: true,
 			},
 			{
-				path: "/projects/demo.recordly",
+				path: "/projects/demo.reclyra",
 				name: "App walkthrough",
 				updatedAt: 1759000000000,
 				thumbnailPath: `${location.origin}/tests/ui/fixtures/recording-thumbnail.jpg`,
@@ -65,7 +65,7 @@ test("home dashboard searches, sorts, opens projects and returns to the editor",
 				isInProjectsDirectory: true,
 			},
 			{
-				path: "/projects/tutorial.recordly",
+				path: "/projects/tutorial.reclyra",
 				name: "Getting started",
 				updatedAt: 1757000000000,
 				thumbnailPath: null,
@@ -108,7 +108,7 @@ test("home dashboard searches, sorts, opens projects and returns to the editor",
 	await expect(page.getByRole("dialog", { name: "Project details" })).toHaveCount(0);
 	await expect(page.locator("html")).toHaveAttribute(
 		"data-opened-project",
-		"/projects/demo.recordly",
+		"/projects/demo.reclyra",
 	);
 	await expect(home).toBeVisible();
 	await home.getByRole("button", { name: "New folder", exact: true }).click();
@@ -213,7 +213,7 @@ test("autosave creates one untitled project, stays idle without edits, and refre
 			projects: [],
 			entries: [
 				{
-					path: "/projects/preview.recordly",
+					path: "/projects/preview.reclyra",
 					name: "Generated preview",
 					updatedAt: 1,
 					thumbnailPath: document.documentElement.dataset.savedThumbnail ?? null,
@@ -259,7 +259,7 @@ test("deletion refreshes the grid and keeps unselected projects", async ({ page 
 	await installDesktopBridge(page);
 	await page.addInitScript(() => {
 		let entries = ["Keep", "Delete"].map((name) => ({
-			path: `/projects/${name}.recordly`,
+			path: `/projects/${name}.reclyra`,
 			name,
 			updatedAt: Date.now(),
 			thumbnailPath: null,
@@ -295,7 +295,7 @@ test("cards rename inline, preserve folder chips and use existing share links", 
 	await installDesktopBridge(page);
 	await page.addInitScript(() => {
 		let entry = {
-			path: "/projects/demo.recordly",
+			path: "/projects/demo.reclyra",
 			name: "Demo",
 			updatedAt: Date.now(),
 			thumbnailPath: null,
@@ -303,16 +303,16 @@ test("cards rename inline, preserve folder chips and use existing share links", 
 			isInProjectsDirectory: true,
 		};
 		localStorage.setItem(
-			"recordly.project-folders.v1",
+			"reclyra.project-folders.v1",
 			JSON.stringify([{ id: "folder", name: "Work", color: "#123abc", paths: [entry.path] }]),
 		);
 		localStorage.setItem(
-			"recordly.project-share-links.v1",
+			"reclyra.project-share-links.v1",
 			JSON.stringify({ [entry.path]: "https://example.com/shared/demo" }),
 		);
 		window.electronAPI.listProjectFiles = async () => ({ success: true, entries: [entry] });
 		window.electronAPI.renameLibraryProject = async (_path, name) => {
-			entry = { ...entry, path: `/projects/${name}.recordly`, name };
+			entry = { ...entry, path: `/projects/${name}.reclyra`, name };
 			return { success: true, path: entry.path };
 		};
 		window.electronAPI.openExternalUrl = async (url) => {
@@ -356,9 +356,9 @@ test("dashboard supports creation sort, independent folders, shared settings and
 	await installDesktopBridge(page);
 	await page.addInitScript(() => {
 		localStorage.setItem(
-			"recordly.project-folders.v1",
+			"reclyra.project-folders.v1",
 			JSON.stringify([
-				{ id: "one", name: "Work", color: "#123abc", paths: ["/old.recordly"] },
+				{ id: "one", name: "Work", color: "#123abc", paths: ["/old.reclyra"] },
 				{ id: "two", name: "Personal", color: "#123abc", paths: [] },
 			]),
 		);
@@ -366,7 +366,7 @@ test("dashboard supports creation sort, independent folders, shared settings and
 			success: true,
 			entries: [
 				{
-					path: "/old.recordly",
+					path: "/old.reclyra",
 					name: "Old",
 					updatedAt: 300,
 					createdAt: 100,
@@ -375,7 +375,7 @@ test("dashboard supports creation sort, independent folders, shared settings and
 					isInProjectsDirectory: true,
 				},
 				{
-					path: "/new.recordly",
+					path: "/new.reclyra",
 					name: "Newer",
 					updatedAt: 200,
 					createdAt: 200,
@@ -403,10 +403,10 @@ test("dashboard supports creation sort, independent folders, shared settings and
 	await expect(home.getByRole("button", { name: "Remove Old from Personal" })).toBeVisible();
 	await expect(home.locator('[aria-label="1 more folders: Personal"]')).toHaveCount(0);
 	const membership = await page.evaluate(() =>
-		JSON.parse(localStorage.getItem("recordly.project-folders.v1") || "[]"),
+		JSON.parse(localStorage.getItem("reclyra.project-folders.v1") || "[]"),
 	);
 	expect(
-		membership.every((folder: { paths: string[] }) => folder.paths.includes("/old.recordly")),
+		membership.every((folder: { paths: string[] }) => folder.paths.includes("/old.reclyra")),
 	).toBe(true);
 	const heights = await home
 		.getByRole("list", { name: "Your projects" })
@@ -569,7 +569,7 @@ test("project hover plays a muted five-second preview and stops on exit", async 
 			projects: [],
 			entries: [
 				{
-					path: "/projects/hover.recordly",
+					path: "/projects/hover.reclyra",
 					name: "Hover preview",
 					updatedAt: 1,
 					thumbnailPath: null,
@@ -648,7 +648,7 @@ test("Home opens normally without a current recording", async ({ page }) => {
 	await installDesktopBridge(page);
 	await page.addInitScript(() => {
 		window.electronAPI.getCurrentVideoPath = async () => ({ success: false });
-		localStorage.setItem("recordly.open-dashboard", String(Date.now()));
+		localStorage.setItem("reclyra.open-dashboard", String(Date.now()));
 	});
 	await page.goto("/?windowType=editor");
 	const home = page.getByRole("dialog", { name: "Projects dashboard", exact: true });
@@ -662,7 +662,7 @@ test("folder actions stay inside narrow project cards without clipping", async (
 	await installDesktopBridge(page);
 	await page.addInitScript(() => {
 		const entries = Array.from({ length: 4 }, (_, index) => ({
-			path: `/projects/card-${index}.recordly`,
+			path: `/projects/card-${index}.reclyra`,
 			name: `Project ${index + 1}`,
 			updatedAt: 1,
 			thumbnailPath: null,
@@ -670,7 +670,7 @@ test("folder actions stay inside narrow project cards without clipping", async (
 			isInProjectsDirectory: true,
 		}));
 		localStorage.setItem(
-			"recordly.project-folders.v1",
+			"reclyra.project-folders.v1",
 			JSON.stringify([
 				{
 					id: "one",

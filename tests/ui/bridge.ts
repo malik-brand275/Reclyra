@@ -1,11 +1,8 @@
 import type { Page } from "@playwright/test";
-import { installSupabaseAuth } from "./auth";
 export async function installDesktopBridge(
 	page: Page,
 	videoFixture = "preview.mp4",
-	auth = { signedIn: true },
 ) {
-	await installSupabaseAuth(page, auth);
 	await page.addInitScript((videoFixture) => {
 		const success = async () => ({ success: true });
 		const subscribe = () => () => undefined;
@@ -18,7 +15,7 @@ export async function installDesktopBridge(
 		Object.assign(window, {
 			electronAPI: {
 				getAppSetting: (key: string) =>
-					key === "recordly.onboarding.v1.seen" ? true : null,
+					key === "reclyra.onboarding.v1.seen" ? true : null,
 				finishRecordingStartup: async () => undefined,
 				showProjectDashboard: async () => {
 					document.documentElement.dataset.dashboardOpened = "true";
@@ -72,7 +69,7 @@ export async function installDesktopBridge(
 					);
 					return {
 						success: true,
-						path: "/projects/Untitled Project.recordly",
+						path: "/projects/Untitled Project.reclyra",
 						projectId: "test-project",
 					};
 				},
@@ -110,16 +107,7 @@ export async function installDesktopBridge(
 				finishRecordingImport: success,
 				setCurrentRecordingSession: success,
 				setHasUnsavedChanges: success,
-				onAuthCallbackUrl: (callback: (url: string) => void) => {
-					const listener = (event: Event) =>
-						callback((event as CustomEvent<string>).detail);
-					window.addEventListener("recordly-test-auth-callback", listener);
-					return () =>
-						window.removeEventListener("recordly-test-auth-callback", listener);
-				},
 				onProjectThumbnailReady: subscribe,
-				getPendingAuthCallbackUrl: async () => null,
-				ackAuthCallbackUrl: success,
 				onMenuSaveProject: subscribe,
 				onMenuSaveProjectAs: subscribe,
 				onMenuLoadProject: subscribe,
@@ -166,7 +154,7 @@ export async function installDesktopBridge(
 				},
 				getCurrentUpdateToastPayload: async () => ({
 					version: "1.4.1",
-					detail: "A new version of Recordly is available.",
+					detail: "A new version of Reclyra is available.",
 					phase: "available",
 					delayMs: 60000,
 					isPreview: true,

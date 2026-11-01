@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 import { installDesktopBridge } from "./bridge";
 
 test.use({
-	channel: process.env.RECORDLY_TEST_BROWSER_CHANNEL === "chrome" ? "chrome" : undefined,
+	channel: process.env.RECLYRA_TEST_BROWSER_CHANNEL === "chrome" ? "chrome" : undefined,
 });
 
 test("two cuts select the middle clip for deletion", async ({ page }) => {

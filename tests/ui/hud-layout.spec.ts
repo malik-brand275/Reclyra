@@ -159,12 +159,12 @@ for (const storageBlocked of [false, true]) {
 				const getItem = Storage.prototype.getItem;
 				const setItem = Storage.prototype.setItem;
 				Storage.prototype.getItem = function (key) {
-					if (key === "recordly.webcam-preview-size")
+					if (key === "reclyra.webcam-preview-size")
 						throw new Error("Storage unavailable");
 					return getItem.call(this, key);
 				};
 				Storage.prototype.setItem = function (key, value) {
-					if (key === "recordly.webcam-preview-size")
+					if (key === "reclyra.webcam-preview-size")
 						throw new Error("Storage unavailable");
 					return setItem.call(this, key, value);
 				};

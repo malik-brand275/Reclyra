@@ -131,7 +131,7 @@ test("header name edits in place and saves on blur without a boxed input", async
 	await page.addInitScript(() => {
 		window.electronAPI.saveProjectFileNamed = async (_data, name) => ({
 			success: true,
-			path: `/projects/${name}.recordly`,
+			path: `/projects/${name}.reclyra`,
 		});
 	});
 	await page.goto("/?windowType=editor");

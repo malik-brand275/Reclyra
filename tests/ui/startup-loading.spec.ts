@@ -123,7 +123,7 @@ test("an explicit Home navigation request uses the dashboard wireframe even with
 }) => {
 	await installDesktopBridge(page);
 	await installDesktopBridgeOverrides(page, () => {
-		localStorage.setItem("recordly.open-dashboard", "true");
+		localStorage.setItem("reclyra.open-dashboard", "true");
 		window.electronAPI.getEditorStartupView = () => "editor";
 	});
 	await page.route("**/src/main.tsx*", (route) => route.abort());
@@ -137,11 +137,11 @@ test("Home navigation keeps the Home skeleton while a retained project finishes 
 }) => {
 	await installDesktopBridge(page);
 	await installDesktopBridgeOverrides(page, () => {
-		localStorage.setItem("recordly.open-dashboard", "true");
+		localStorage.setItem("reclyra.open-dashboard", "true");
 		window.electronAPI.getEditorStartupView = () => "editor";
 		window.electronAPI.loadCurrentProjectFile = async () => ({
 			success: true,
-			path: "/projects/retained.recordly",
+			path: "/projects/retained.reclyra",
 			project: {
 				version: 2,
 				videoPath: `${location.origin}/tests/ui/fixtures/preview.mp4`,
